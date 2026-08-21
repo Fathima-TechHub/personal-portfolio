@@ -69,10 +69,15 @@ if (contactForm) {
             `Email: ${email}\n\n` +
             `${message}`;
 
-        window.location.href =
-            `mailto:mohamedanwarfathima@gmail.com` +
-            `?subject=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`;
+        const gmail =
+            "https://mail.google.com/mail/?view=cm&fs=1" +
+            "&to=mohamedanwarfathima@gmail.com" +
+            "&su=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+
+        window.open(gmail, "_blank");
+
+        contactForm.reset();
     });
 
 }
